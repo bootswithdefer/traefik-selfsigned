@@ -19,7 +19,7 @@ RUN apk add --no-cache ca-certificates gnupg openssl && \
     cp bin/gosu bin/dumb-init /bin && \
     cd /tmp && \
     rm -rf /tmp/build && \
-    apk del gnupg openssl && \
+    apk del gnupg && \
     rm -rf /root/.gnupg
 
 COPY entrypoint.sh /entrypoint.sh
