@@ -6,6 +6,9 @@ set -e
 # wouldn't do either of these functions so we'd leak zombies as well as do
 # unclean termination of all our sub-processes.
 
+# Generate self-signed certificate
+openssl req -x509 -newkey rsa:2048 -nodes -keyout /etc/ssl/private/server.key -days 3650 -out /etc/ssl/server.pem -subj "/CN=example.com"
+
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
     set -- traefik "$@"
