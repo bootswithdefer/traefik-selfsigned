@@ -7,7 +7,7 @@ ENV DOCKER_BASE_VERSION=0.0.4
 ENV HASHICORP_RELEASES=https://releases.hashicorp.com
 
 RUN apk add --no-cache ca-certificates gnupg openssl && \
-    gpg --keyserver pgp.mit.edu --recv-keys 91A6E7F85D05C65630BEF18951852D87348FFC4C && \
+    gpg --keyserver pool.sks-keyservers.net --recv-keys 91A6E7F85D05C65630BEF18951852D87348FFC4C && \
     mkdir -p /tmp/build && \
     cd /tmp/build && \
     wget ${HASHICORP_RELEASES}/docker-base/${DOCKER_BASE_VERSION}/docker-base_${DOCKER_BASE_VERSION}_linux_amd64.zip && \
